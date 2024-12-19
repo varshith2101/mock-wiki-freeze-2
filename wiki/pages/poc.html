@@ -1,0 +1,154 @@
+{% extends "layout.html" %}
+  
+{% block title %}Proof of Concept{% endblock %}
+{% block lead %}poc{% endblock %}
+
+{% block page_content %}
+
+<header class="hero">
+    <h1 style="margin-bottom: 30vh;">Proof of concept</h1>
+    <div class="scroll-indicator">↓</div>
+</header>
+
+<main class="container main-content">
+    <aside class="table-of-contents" style="width: 15vw;">
+        <h2>Table of Contents</h2>
+        <ul>
+            <li><a href="#section-1"  style="margin-top: 0vh;">Overview</a></li>
+            <li><a href="#section-2">Steps of Homologous Recombination (HR)</a></li>
+            <li><a href="#section-3">Application in the Project</a></li>
+            <li><a href="#section-4">Steps of HR in the Project</a></li>
+            <li><a href="#section-5">References</a></li>
+        </ul>
+    </aside>
+
+    <div class="content-panel">
+        <div class="research-content">
+            <section id="section-1">
+                <h2>Overview</h2>
+
+<strong><p>Homologous Recombination in Bacillus subtilis</p></strong>
+<p>
+    Homologous recombination (HR) is a precise method used to modify bacterial genomes by replacing or inserting specific DNA sequences with the help of flanking homologous regions <a" target="_blank">[1]</a>. In this project, HR is employed to enhance the production of Iturin A in <i>Bacillus subtilis</i> by replacing the native Pitu promoter, which regulates Iturin A biosynthesis, with a stronger dual promoter. This dual promoter, composed of P43 and Pbac A, will improve gene expression throughout both the exponential and stationary phases of bacterial growth.
+</p>
+</section>
+<section id="section-2">
+<h2>Steps of Homologous Recombination (HR)</h2>
+<p>The steps of homologous recombination (HR) for genome modification and DNA repair are sequential processes that ensure the accurate exchange or repair of genetic material.</p>
+
+<p><strong>1. Recognition of the Double-Strand Break (DSB)</strong></p>
+<p>
+    Homologous recombination typically begins with the recognition of a DNA double-strand break (DSB). These breaks can occur naturally during cell division or can be induced by external factors like radiation, chemicals, or through genetic engineering tools like CRISPR-Cas9. The cell recognizes the DSB as a signal for repair and recruits several repair proteins to the site of damage. In bacterial systems like <i>Bacillus subtilis</i>, RecA plays a key role in initiating the repair process by binding to the broken DNA ends.
+</p>
+
+<p><strong>2. End Processing</strong></p>
+<p>
+    After recognition, the broken DNA ends are processed to create single-stranded DNA (ssDNA) overhangs. This step involves the resection of the 5’ ends of the break, leaving exposed 3’ single-stranded tails. Specific proteins, such as RecBCD in bacteria, are involved in this end-processing step. These ssDNA tails are crucial because they will search for a homologous sequence in the DNA to initiate repair.
+</p>
+
+<p><strong>3. Strand Invasion</strong></p>
+<p>
+    Once the ssDNA overhangs are formed, the next critical step is strand invasion. The ssDNA searches for a homologous sequence on a sister chromatid or homologous chromosome. This is facilitated by the RecA protein, which coats the ssDNA and helps it align with the complementary DNA strand. The invading strand forms a displacement loop (D-loop) by invading the homologous region, effectively pairing with the complementary DNA sequence of the homologous chromosome or DNA donor sequence. This step ensures the correct sequence is used as a template for repair or recombination.
+</p>
+
+<p><strong>4. DNA Synthesis and Ligation</strong></p>
+<p>
+    After strand invasion, the 3’ end of the invading strand serves as a primer for new DNA synthesis. DNA polymerases extend the invading strand using the homologous template. This process ensures that the broken region is filled with the correct genetic sequence. As the new DNA is synthesized, the complementary strand is also synthesized on the other side of the break. Finally, DNA ligases join (ligate) the newly synthesized DNA to the original strands, completing the repair of the DSB.
+</p>
+
+<p><strong>5. Resolution of the Holliday Junction</strong></p>
+<p>
+    After DNA synthesis and ligation, the recombined DNA forms a structure known as the Holliday junction. This is an intermediate cross-shaped structure where the strands of the two homologous DNA molecules are covalently linked. The Holliday junction must be resolved for the recombination to be complete.
+</p>
+<p>This can occur in two ways:</p>
+<ul>
+    <li>
+        <strong>Crossover resolution:</strong> where the genetic material is exchanged between the two DNA molecules, resulting in the swapping of genetic sequences.
+    </li>
+    <li>
+        <strong>Non-crossover resolution:</strong> where the original DNA molecules remain largely unchanged, but the break is repaired using the homologous sequence as a template [2].
+    </li>
+</ul>
+<p>
+    Special proteins, like resolvases, help in the resolution of the Holliday junction by cutting and re-ligating the DNA strands in the appropriate configuration, ensuring genomic stability[2]
+
+</section>
+
+<section id="section-3">
+<h2>Application in the Project</h2>
+<p>
+    In this project, HR is used to integrate a DNA fragment containing a dual promoter (P43 and Pbac A) into the <i>Bacillus subtilis</i> genome, swapping the native Pitu promoter. The process begins with the intentional induction of a DSB at the target locus, followed by end processing, strand invasion by the homologous arms of the insert, DNA synthesis to incorporate the dual promoter, and final resolution to establish the desired genetic modification.
+</p>
+
+<p>
+    These sequential steps, from recognizing the DSB to resolving the Holliday junction, are essential for precise genetic recombination, allowing the introduction of new genes or the replacement of regulatory sequences [1]</a>.
+</p>
+</section>
+<section id="section-4">
+
+<h2>Steps of HR in the Project</h2>
+<p><strong>1. Designing the DNA Insert</strong></p>
+<p>
+    The DNA fragment was designed to include the dual promoter (P43 and Pbac A), flanked by homology arms of 300-500 bp targeting the Pitu promoter region. In addition, a GFP marker (green fluorescent protein) was inserted downstream of the promoter, which serves as a visual reporter for successful transformations, allowing for the selection of recombinant cells through fluorescence.
+</p>
+
+<p><strong>2. Recognition of the Double-Strand Break (DSB)</strong></p>
+<p>
+    HR requires a double-strand break (DSB) at the target site where the native Pitu promoter is located. The DSB triggers the HR repair mechanism, enabling the integration of the new dual promoter sequence. This break can either occur spontaneously or be induced using methods like CRISPR-Cas9 to increase recombination efficiency.
+</p>
+
+<p><strong>3. End Processing and Strand Invasion</strong></p>
+<p>
+    The broken DNA ends are processed, leading to the formation of single-stranded DNA, which then invades the homologous sequences on the DNA insert. This invasion step aligns the homology arms of the insert with the corresponding sequences in the genome.
+</p>
+
+<p><strong>4. DNA Synthesis and Ligation</strong></p>
+<p>
+    DNA synthesis occurs along the template of the inserted DNA, incorporating the dual promoter and GFP marker into the genome at the desired location. The remaining single-stranded gaps are filled, and the strands are ligated to complete the integration.
+</p>
+
+<p><strong>5. Resolution of the Holliday Junction</strong></p>
+<p>
+    Once DNA synthesis is complete, the recombinant structure is resolved through the formation and subsequent resolution of a Holliday junction. This final step ensures the correct incorporation of the new promoter sequence into the genome>[2][3][4][5]</p>
+<p><strong>6. Validation of HR</strong></p>
+<ul>
+    <li><strong>GFP Expression:</strong> Transformed cells expressing the GFP protein will fluoresce under UV light, providing a straightforward method for identifying successful recombinants [6]</a>.</li>
+    <li><strong>Colony PCR:</strong> To confirm that the correct DNA sequence was inserted, colony PCR will be performed using primers specific to the dual promoter and GFP sequences. Successful recombination will be indicated by amplification of the target regions.</li>
+</ul>
+</section>
+            <section id="section-5">
+                <h2>References</h2>
+                
+                <ol>
+                    <li>
+                        Li, X., & Heyer, W. (2007). Homologous recombination in DNA repair and DNA damage tolerance. <em>Cell Research</em>, 18(1), 99-113. 
+                        <a href="https://doi.org/10.1038/cr.2008.1" target="_blank">https://doi.org/10.1038/cr.2008.1</a>
+                    </li>
+                    <li>
+                        Krejci, L., Altmannova, V., Spirek, M., & Zhao, X. (2012). Homologous recombination and its regulation. <em>Nucleic Acids Research</em>, 40(13), 5795-5818. 
+                        <a href="https://doi.org/10.1093/nar/gks270" target="_blank">https://doi.org/10.1093/nar/gks270</a>
+                    </li>
+                    <li>
+                        Wang, Y., Weng, J., Waseem, R., Yin, X., Zhang, R., & Shen, Q. (2012). Bacillus subtilis genome editing using ssDNA with short homology regions. <em>Nucleic Acids Research</em>, 40(12), e91. 
+                        <a href="https://doi.org/10.1093/nar/gks248" target="_blank">https://doi.org/10.1093/nar/gks248</a>
+                    </li>
+                    <li>
+                        Gao, L., She, M., Shi, J., Cai, D., Wang, D., Xiong, M., Shen, G., Gao, J., Zhang, M., Yang, Z., & Chen, S. (2022). Enhanced production of iturin A by strengthening fatty acid synthesis modules in Bacillus amyloliquefaciens. <em>Frontiers in Bioengineering and Biotechnology</em>, 10, 974460. 
+                        <a href="https://doi.org/10.3389/fbioe.2022.974460" target="_blank">https://doi.org/10.3389/fbioe.2022.974460</a>
+                    </li>
+                    <li>
+                        Dang, Y., Zhao, F., Liu, X. et al. (2019). Enhanced production of antifungal lipopeptide iturin A by Bacillus amyloliquefaciens LL3 through metabolic engineering and culture conditions optimization. <em>Microbial Cell Factories</em>, 18, 68. 
+                        <a href="https://doi.org/10.1186/s12934-019-1121-1" target="_blank">https://doi.org/10.1186/s12934-019-1121-1</a>
+                    </li>
+                    <li>
+                        Bisicchia, P., Botella, E., & Devine, K. M. (2010). Suite of novel vectors for ectopic insertion of GFP, CFP and IYFP transcriptional fusions in single copy at the amyE and bglS loci in Bacillus subtilis. <em>Plasmid</em>, 64(3), 143–149. 
+                        <a href="https://doi.org/10.1016/j.plasmid.2010.06.002" target="_blank">https://doi.org/10.1016/j.plasmid.2010.06.002</a>
+                    </li>
+                </ol>
+            </section>
+        </div>
+    </div>
+                
+</main>
+
+{% endblock %}

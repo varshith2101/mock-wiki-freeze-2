@@ -1,0 +1,118 @@
+{% extends "layout.html" %}
+  
+{% block title %}Project Description{% endblock %}
+{% block lead %}Describe how and why you chose your iGEM project.{% endblock %}
+
+{% block page_content %}
+
+<header class="hero">
+    <h1 style="margin-bottom: 30vh;">Description</h1>
+    <div class="scroll-indicator">↓</div>
+</header>
+
+<main class="container main-content">
+    <aside class="table-of-contents" style="width: 15vw;">
+        <h2>Table of Contents</h2>
+        <ul>
+            <li><a href="#section-1"  style="margin-top: 0vh;">Background</a></li>
+            <li><a href="#section-2">Project goals</a></li>
+            <li><a href="#section-3">Inspiration and Rationale</a></li>
+            <li><a href="#section-4">Impact and Vision</a></li>
+            <li><a href="#section-5">Conclusion</a></li>
+            <li><a href="#section-6">References</a></li>
+        </ul>
+    </aside>
+
+    <div class="content-panel">
+        <div class="research-content">
+            <section id="section-1">
+                <h2>Background</h2>
+                <p>Coffee leaf rust (CLR), caused by the fungus <i>Hemileia vastatrix</i>, is a devastating disease that severely affects <i>Coffea arabica</i>, a species responsible for the majority of global coffee production. CLR incurs an estimated $1 billion in annual losses globally, making it a significant threat to coffee cultivation [1][2][3]. The fungus infiltrates coffee leaves through urediniospores, which then form appressoria over stomata, leading to the development of intercellular hyphae and eventual sporulation. This process results in premature defoliation, significantly weakening the coffee plants. The disease impacts coffee quality and can reduce yields by up to 75% [1][4], profoundly affecting millions of farmers' livelihoods.</p>
+                <p>With 2.5 billion cups of coffee consumed daily worldwide, the crop is essential not only to consumers but also to many developing economies that rely on coffee as a primary agricultural export. The rapid spread of CLR through disseminated urediniospores further threatens global coffee supplies. Therefore, innovative solutions are urgently needed to counter this pervasive threat [2][3].
+                </p>
+                <p>To fully address CLR, it is essential to first understand the life cycle of Hemileia vastatrix. The fungus begins by adhering its urediniospores to the underside of coffee leaves, where they germinate and form appressoria—specialized infection structures that enable the fungus to penetrate the stomata. Once inside, the fungus produces haustoria, which are responsible for extracting nutrients from the plant's cells. As the infection progresses, the fungus expands through the plant tissue via intercellular hyphae and haustorial mother cells, weakening the plant. The fungus secretes effector proteins that suppress the plant’s immune response, allowing the disease to spread further. Eventually, the fungus produces more spores through sporulation, perpetuating its destructive cycle [3][4].
+                </p>
+                <center><figure>
+                    <img  style="width: 35vw;height: auto; padding: 5vh;" src="https://static.igem.wiki/teams/5141/description/mechanism-of-hv.webp"
+                    alt="">
+                    <figcaption style="font-size: 1.5vh"><i>Fig:Mechanism of H. vastatrix [7].</i> </figcaption>
+                </figure></center>
+            </section>
+            <section id="section-2">
+                <h2>Project Goals</h2>
+                <p>Our project aims to combat coffee leaf rust by enhancing the production of Iturin A, a potent antifungal lipopeptide produced by <i>Bacillus species</i>, which are natural inhabitants of the coffee plant microbiota. Specifically, our research focuses on the strain<i> Bacillus subtilis ATCC 13952</i>. Iturin A has proven efficacy against <i>Hemileia vastatrix</i>, the fungus responsible for CLR [1][2].
+                </p>
+                <p>To increase the synthesis of Iturin A, we will replace the natural promoter of the Iturin operon (Pitu) in <i>B. subtilis</i> with a stronger dual-promoter using homologous recombination. This genetic modification will be integrated into the chromosomal DNA of <i>B. subtilis</i>. Our approach includes extensive in-silico studies to analyze the natural promoter and surrounding sequences, along with kinetic and growth studies to evaluate the performance of the engineered strains. The ultimate goal is to optimize promoter design to match the metabolic capacity of the bacterial strain [1][3].
+                </p>
+                <p>In addition to this, a machine learning-based yield prediction model is being developed. This model will use historical coffee yield data and environmental factors such as soil nutrients, rainfall, temperature, and humidity to estimate potential coffee yields. This dual approach not only addresses CLR directly but also provides predictive insights to support farmers in managing their crops more effectively [2][4].
+                </p>
+                <center><figure>
+                    <img  style="width: 35vw;height: auto;" src="https://static.igem.wiki/teams/5141/description/leaf-rust-image-2.jpg"
+                    alt="">
+                    <figcaption style="font-size: 1.5vh"><i></i> </figcaption>
+                </figure></center>
+                <center><figure>
+                    <img  style="width: 35vw;height: auto; " src="https://static.igem.wiki/teams/5141/description/leaf-rust-image-1.jpg"
+                    alt="">
+                    <figcaption style="font-size: 1.5vh"><i>Fig:Pictures of CLR taken by the team at Coorg Spice Gardens.
+                    </i> </figcaption>
+                </figure></center>
+            </section>
+            <section id="section-3">
+                <h2>Inspiration and Rationale
+                </h2>
+                <p>The inspiration behind this project stems from the urgent need for sustainable and effective solutions to combat agricultural diseases that threaten global food security. Traditional chemical fungicides, particularly copper-based ones, have significant environmental drawbacks, including soil leaching, biomagnification, and copper toxicity. These issues necessitate an eco-friendly alternative that can be seamlessly integrated into existing agricultural practices without causing further harm to the ecosystem [1][2].
+                </p>
+                <p>Our synthetic biology-based approach leverages the natural antifungal properties of <i>Bacillus species</i>, enhancing their effectiveness through genetic engineering. This method not only offers a targeted solution to CLR but also aligns with the global shift towards sustainable agriculture. By focusing on a naturally occurring antifungal agent and optimizing its production, we aim to create a robust defense against CLR that supports farmers, protects the environment, and ensures the stability of coffee supplies [3][4].
+                </p>
+            </section>
+            <section id="section-4">
+                <h2>Impact and Vision
+                </h2>
+                <p>This project has far-reaching implications for the coffee industry and beyond. Coffee leaf rust (CLR), caused by <i>Hemileia vastatrix</i>, is a devastating disease that has historically caused yield losses ranging from 30-80%, depending on the severity of the infection and the effectiveness of management practices.</p>
+
+<p>Karnataka is the largest coffee-producing state in India, contributing around 70% of India’s total coffee output [6]. Coffee cultivation, particularly of <i>Coffea arabica</i> and <i>Coffea canephora</i> (commonly known as Robusta), is a vital economic activity in regions like Kodagu, Chikmagalur, and Hassan. The state's ideal climate and topography make it a key player in the global coffee market, with a significant portion of its production being exported to Europe, the Middle East, and the United States. However, the emergence and spread of Coffee Leaf Rust poses a severe threat to Karnataka's coffee industry. CLR weakens coffee plants and drastically reduces yields, up to 90% in some cases [5]. A sustained outbreak of CLR could lead to a loss of Karnataka's global market share, affecting not only the farmers but also the broader economy that relies on this important agricultural export. Hence, combating CLR is critical to safeguarding the future of Karnataka’s coffee sector.</p>
+
+<p>In regions like Central America, Mexico, and Colombia, outbreaks of CLR have led to national production losses of up to 70%, with global economic damage reaching one to two billion US dollars annually [2][3]. By significantly reducing the impact of CLR, we can enhance the productivity and sustainability of coffee farms, thereby improving the livelihoods of millions of farmers. Furthermore, this approach serves as a model for addressing other crop diseases through genetic interventions, showcasing the potential of synthetic biology in enhancing crop resilience and ensuring global food security [1][3].</p>
+
+<p>This project is deeply rooted in our commitment to our community and our state of Karnataka, where coffee is not just a crop but a vital part of our heritage and economy. As students from Karnataka, we feel a profound responsibility to give back to our country by protecting one of its major exports. By empowering local coffee farmers to combat Coffee Leaf Rust (CLR) using synthetic biology, we are addressing a significant local agricultural problem with cutting-edge science. By tailoring solutions to the specific challenges faced by our community, we leverage local expertise and conditions to ensure relevance and effectiveness. The integration of machine learning for yield prediction further supports our farmers in optimizing their agricultural practices.</p>
+
+            </section>
+            <section id="section-5">
+            <h2>Conclusion
+            </h2>
+            <p>In summary, our project aims to:</p>
+<ul>
+<li>Develop a novel, eco-friendly solution to combat coffee leaf rust.</li>
+<li>Enhance the production of Iturin A in <i>Bacillus subtilis</i> through genetic engineering.</li>
+<li>Implement a machine learning model to predict coffee yields based on environmental factors.</li>
+<li>Provide a sustainable alternative to chemical fungicides, mitigating environmental harm.</li>
+<li>Improve the resilience of coffee crops, supporting the economic stability of coffee-growing regions.</li>
+</ul>
+<p>By combining cutting-edge synthetic biology with advanced predictive modelling, we aspire to make a significant impact on global agriculture, ensuring that coffee remains a viable and sustainable crop for future generations.</p>
+<center><figure></figure>
+<img  style="width: 35vw;height: auto; " src="https://static.igem.wiki/teams/5141/description/clr-spread.png"
+alt="">
+<figcaption style="font-size: 1.5vh"><i>Fig: The global spread of Coffee Leaf Rust (CLR) from its first known outbreak in Ceylon, Sri Lanka (1869) to major coffee-growing regions. Map created referencing a map from Wikipedia and information from the webpage: ["Coffee Rust Spreads Together with Coffee Plantations"]
+</i> </figcaption>
+</figure></center>
+        </section>
+
+            <section id="section-6">
+                <h2>References</h2>
+                <ol>
+                    <li><a>Bioprotection Portal: Coffee Rust Symptoms, Causes, and Solutions</a></li>
+                    <li><a>Britannica: Coffee Rust</a></li>
+                    <li>Talhinhas, P., Batista, D., Diniz, I., Vieira, A., Silva, D. N., Loureiro, A., Tavares, S., Pereira, A. P., Azinheira, H. G., Várzea, V., & Silva, C. (2017). The coffee leaf rust pathogen <i>Hemileia vastatrix</i>: One and a half centuries around the tropics. Molecular Plant Pathology, 18(8), 1039-1051. <a href="https://doi.org/10.1111/mpp.12512">https://doi.org/10.1111/mpp.12512</a></li>
+                    <li><a>APS: Coffee Rust</a></li>
+                    <li><a>ResearchGate: The Coffee Leaf Rust Pathogen <i>Hemileia vastatrix</i> at Major Coffee Producing Regions of Karnataka</a></li>
+                    <li><a>Indian Estates: Coffee Producing States in India</a></li>
+                    <li>A. Martins et al., GOVERNMENT OF THE STATE OF ESPÍRITO SANTO Governor of the State of Espírito Santo Renato Casagrande DEPARTMENT OF AGRICULTURE, SUPPLY, AQUACULTURE AND FISHERIES-SEAG State Secretary for Agriculture, Fisheries, Aquaculture and Fisheries. 2019.</li>
+                </ol>
+                </section>
+        </div>
+    </div>
+                
+</main>
+
+{% endblock %}

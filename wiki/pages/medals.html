@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+  
+{% block title %}Medals{% endblock %}
+{% block lead %}medals{% endblock %}
+
+{% block page_content %}
+
+<header class="hero">
+    <h1 style="margin-bottom: 30vh;">Medals</h1>
+    <div class="scroll-indicator">↓</div>
+</header>
+
+<main class="container main-content">
+    <!-- <aside class="table-of-contents" style="width: 15vw;">
+        <h2>Table of Contents</h2>
+        <ul>
+            <li><a href="#section-1"  style="margin-top: 0vh;">Overview</a></li>
+            <li><a href="#section-2">References</a></li>
+        </ul>
+    </aside> -->
+
+    <div style="padding-left: 7vw;"><div class="content-panel" >
+        <div class="research-content">
+
+                <!-- Add hrefs to their respective pages -->
+
+            <center><section id="section-1">
+                <h2>Bronze Medal</h2>
+                <p>
+                  Project Attributions: <a href="{{ url_for('pages', page='attributions') }}" >here</a>
+                </p>
+                <p>
+                  Project Description: <a href="{{ url_for('pages', page='description') }}" >here</a>
+                </p>
+                <p>
+                  Contribution: <a href="{{ url_for('pages', page='contribution') }}" >here</a>
+                </p>
+                
+                
+                <h2>Silver Medal</h2>
+                <p>
+                  Result: <a href="{{ url_for('pages', page='results') }}" >here</a>
+                </p>
+                <p>
+                    HP: <a href="{{ url_for('pages', page='hp') }}" >here</a>
+                  </p>
+                
+                <h2>Gold Medal</h2>
+                <p>
+                  iHP: <a href="{{ url_for('pages', page='ihp') }}" >here</a>
+                </p>
+                <p>
+                  Education: <a href="{{ url_for('pages', page='education') }}" >here</a>
+                </p>
+                <p>
+                  Measurement: <a href="{{ url_for('pages', page='measurement') }}" >here</a>
+                </p>
+                </section>     
+            </center>
+                
+
+        </div>
+    </div></div>
+                
+</main>
+
+{% endblock %}

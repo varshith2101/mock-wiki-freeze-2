@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+
+{% block title %}Attributions{% endblock %}
+{% block lead %}In the iGEM Competition, we celebrate student effort and achievement. The Attributions form helps the judges differentiate between what students accomplished from how their external collaborators supported them. Therefore, teams must clearly explain on the standard Project Attributions form what work they have conducted by themselves and what has been done by others.{% endblock %}
+
+{% block page_content %}
+
+
+<header class="hero" style="overflow-x: hidden;">
+  <h1 style="margin-bottom: 30vh;">Attributions</h1>
+  <div class="scroll-indicator">↓</div>
+</header>
+
+<div class="row mt-4" style="overflow-x: hidden;">
+  <div class="col">
+    
+    <div class="bd-callout bd-callout-info" style="width: 90vw;padding: 0vw 5vw;">
+      
+      <p>The iGEM team of MIT-MAHE understands the importance of giving credit where it is due. The attributions page acknowledges the hard work, dedication, and creativity of all members of the team. Further, this project would not have been possible without the support of our PIs, secondary PIs, mentors, advisors and external contractors.
+More detailed descriptions of the team members contributions to the project as well as external attributions can be found in the attribution form below.</p>
+      
+    </div>
+  </div>
+</div>
+
+<!--
+  ======================================================================
+  == VERY IMPORTANT                                                   ==
+  ======================================================================
+  LEAVE THE IFRAME CODE BELOW AS IT IS, THE ATTRIBUTION FORM OF YOUR TEAM
+  WILL BE DISPLAYED ON THIS PAGE. DO NOT REMOVE IT, OTHERWISE YOU RISK OF
+  NOT MEETING BRONZE MEDAL CRITERION #2
+ -->
+
+ <div style="width: 90vw;padding:0vw 5vw;overflow-x: hidden;">
+  <div class="row mt-4">
+    <script type="text/javascript">
+      // Listen to size change and update form height
+      window.addEventListener("message", function (e) {
+        if (e.origin === "https://teams.igem.org") {
+          const {type, data} = JSON.parse(e.data);
+          if (type === "igem-attribution-form") {
+            const element = document.getElementById("igem-attribution-form");
+            element.style.height = `${data + 100}px`;
+          }
+        }
+      });
+    </script>
+    <iframe
+      style='width: 100%'
+      id="igem-attribution-form"
+      src="https://teams.igem.org/wiki/5141/attributions">
+    >
+    </iframe>
+    <!-- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ -->
+  
+  </div>
+ </div>
+
+
+
+
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+  
+{% block title %}Protocols{% endblock %}
+{% block lead %}protocols{% endblock %}
+
+{% block page_content %}
+
+<header class="hero">
+    <h1 style="margin-bottom: 30vh;">Protocols</h1>
+    <div class="scroll-indicator">↓</div>
+</header>
+
+<main class="container main-content">
+    <aside class="table-of-contents" style="width: 15vw;">
+        <h2>Table of Contents</h2>
+        <ul>
+            <li><a href="#section-1"  style="margin-top: 0vh;"> </a></li>
+            <li><a href="#section-2">Protocols Pdf </a></li>
+            
+        </ul>
+    </aside>
+
+    <div class="content-panel">
+        <div class="research-content">
+            <section id="section-1">
+                <h2>Introduction</h2>
+                <p>This protocol document provides a detailed guide for all experimental procedures to be followed throughout our project. It outlines the step-by-step methods for each experiment, ensuring consistency, accuracy, and adherence to safety standards in the laboratory. By consolidating the protocols, this document serves as a comprehensive reference to facilitate smooth execution and reproducibility of our work.</p> 
+
+                <p>For our iGEM MIT MAHE team, this document also serves as a roadmap, helping us navigate through the various stages of the project while adhering to biosafety guidelines and best lab practices. By following these protocols, we minimize experimental errors, mitigate risks, and ensure that we handle all biological materials, reagents, and equipment safely and responsibly. This is especially important in a collaborative, fast-paced research environment, where multiple team members may be involved in the same or different aspects of the project.</p>
+            </section>
+
+            <section id="section-2">
+                <embed src="https://static.igem.wiki/teams/5141/protocol/protocols-wiki-thaw.pdf" width="100%" height="700vh" type="application/pdf">
+            </section>
+
+            
+        </div>
+    </div>
+</main>
+
+{% endblock %}
