@@ -41,7 +41,7 @@ def pages(page):
     """
     try:
         # Construct the path dynamically and render the template
-        return render_template(f'pages/{page.lower()}.html')
+        return render_template(f'pages/' + {page} + '.html')
     except Exception as e:
         # Return a 404 page or error message
         return f"Page not found: {str(e)}", 404
