@@ -1,0 +1,1275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Integrated HP</title>
+    <link rel="shortcut icon" href="https://static.igem.wiki/teams/5141/images/igem-mit-mahe-logo.webp"/>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Titan+One&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+             @media (min-width: 1200px) {
+    .container, .navbar-content { max-width: 1200px; margin: 0 auto; }
+    .navbar-logo, .navbar-links a { font-size: 1rem; }
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(1.852vh); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInFromLeft {
+    from { transform: translateX(-100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-2.778vh); }
+    60% { transform: translateY(-1.389vh); }
+
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+    background-color: #E9EDC9;
+    overflow-x: hidden;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1.667vw;
+    position: relative;
+    top: 0.833vw;
+    left: 0.833vw;
+    right: 0.833vw;
+    z-index: 10;
+}
+
+.navbar-logo {
+    font-family: 'Titan One', cursive;
+    font-size: 1.25vw;
+    text-decoration: none;
+    color: #5A6B3F;
+}
+
+.navbar-content {
+    background-color: #899464;
+    border-radius: 2.604vw;
+    padding: 0.833vw 12.5vw;
+    display: flex;
+    align-items: center;
+}
+
+.navbar-links a {
+    font-weight: bolder;
+    color: #213129;
+    text-decoration: none;
+    margin: 0 0.833vw;
+    transition: color 0.3s ease;
+    font-size: 2.2vh;
+}
+
+.navbar-links a:hover {
+    color: #E9EDC9;
+}
+
+.navbar-icons {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-icons a {
+    color: #5A6B3F;
+    margin-left: 0.833vw;
+}
+
+.container {
+    max-width: 72.917vw;
+    margin: 0 auto;
+    padding: 0 0.833vw;
+    margin-bottom: 10vh;
+}
+
+@media (max-width: 768px) {
+    .main-content {
+        grid-template-columns: 1fr;
+    }
+
+    .table-of-contents {
+        position: static;
+        height: auto;
+        margin-bottom: 1.667vw;
+    }
+
+    .hero h1 {
+        font-size: 8vw;
+    }
+
+    .navbar {
+        flex-direction: column;
+        align-items:center;
+    }
+
+    .navbar-content {
+        margin-top: 0.833vw;
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .navbar-icons {
+        margin-top: 0.833vw;
+    }
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #899464;
+    min-width: 8.333vw;
+    box-shadow: 0px 0.417vw 0.833vw 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 0.26vw;
+    opacity: 0;
+    transform: translateY(-0.926vh);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.dropdown-content a {
+    color: #213129;
+    padding: 1.111vh 0.833vw;
+    text-decoration: none;
+    display: block;
+    transition: color 0.3s ease;
+    font-weight: bolder;
+    line-height: 1.6;
+}
+
+.navbar-links .dropdown-content a:hover {
+    color: #FEFAE0;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.dropdown:hover a {
+    color: #3D4A2D;
+}
+
+
+/*!STATS*/
+
+.container-stats {
+    display:flex;
+    flex-direction: row;
+    width: 97vw;
+    height: 83vh;
+    padding-bottom:9.877vh;
+}
+
+.left-text, .right-text {
+    text-align: center;
+    font-weight: bold;
+    opacity: 0; 
+    color:#213129;
+    letter-spacing: 0.069vw;
+}
+
+.left-text h1,h2{
+    font-size: 5.56vh;
+    font-family: 'Titan One', cursive;
+    margin: 0%;
+
+}
+
+.right-text p{
+    font-size: 5.333vh;
+    font-family: 'Titan One', cursive;
+}
+
+.map-container {
+    align-items: center;
+    width: 65vw;
+    height:86.42vh;
+    padding-left:-0.208vw;
+    overflow: hidden;
+}
+
+.map-container img {
+    height:100%;
+    width:auto;
+    object-fit: cover;
+    display: block;
+    animation: fadeIn 2s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.left-text {
+    padding-top:22vh ;
+    animation: slideInLeft 1s forwards;
+    animation-delay: 0.5s;
+    text-align:center;
+    width: 40%; 
+    margin-left: 3vw;
+    
+}
+
+.right-text {
+    padding-top:19vh ;
+    padding-left: 2.083vw;
+    animation: slideInRight 1s forwards;
+    animation-delay: 0.5s; 
+    text-align:center;
+    width: 40%; 
+}
+
+.info{
+    font-size: 2.5vh;
+    font-weight: 900;
+    font-family: Poppins;
+    text-align: justify;
+    color: #213129;
+    padding-left: 10vw;
+    padding-right: 10vw;
+
+}
+/*! EDUCATION CONTENT*/
+
+.ed-container{
+    display: flex;
+    align-items: center; 
+}
+
+.text-container{
+    width:69.444vw; 
+    height: 87.593vh; 
+    position: relative;
+    background: #FEFAE0; 
+    border-radius: 2.778vw; 
+    right: -5%;
+    margin-top:6vh;
+    margin-left: 3.472vw;
+}
+
+
+.ed-container .text-container h2{
+    font-size:4.7vh ;
+    text-align: center;
+    margin-bottom: 2.5vh;
+    color:#5d6a44;
+    margin-right:4.861vw;
+    margin-top: 3.704vh;
+}
+.ed-container .text-container p{
+    font-size: 2.2vh;
+    text-align: justify;
+    background-color: #FEFAE0;
+}
+
+.img-grid{
+    background:#213129;
+    height:71.5vh;
+    width:63vw;
+    margin-left: 6.944vw;
+    transition: transform .2s;
+    overflow: hidden;
+}
+
+.img-grid img{
+    height:auto;
+    width:100%;
+    object-fit: cover;
+    display: block;
+}
+
+.text-container-flipped{
+    width:75vw; 
+    height: 87.593vh; 
+    position: relative;
+    background: #FEFAE0; 
+    border-radius: 2.778vw; 
+    left: -7%;
+    margin-right: 2.083vw;
+    margin-top: 3.704vh;
+}
+
+.ed-container .text-container-flipped h2{
+    font-size:4.7vh ;
+    text-align: center;
+    margin-bottom: 2.5vh;
+    color:#5d6a44;
+    margin-left: 4vw;
+    margin-top: 3.704vh;
+}
+.ed-container .text-container-flipped p{
+    font-size: 2.2vh;
+    text-align: justify;
+    background-color: #FEFAE0;
+}
+
+.img-grid-flipped{
+    height:69vh;
+    width:61vw;
+    margin-top:3vh;
+    margin-left: -1.389vw;
+    margin-right: 6.944vw;
+    transition: transform .2s;
+    overflow: hidden;
+}
+.img-grid-flipped img{
+    height:auto;
+    width:100%;
+    object-fit: cover;
+    display: block;
+
+}
+
+.img-grid:hover {
+    transform: scale(1.1);
+}
+
+.img-grid-flipped:hover{
+    transform: scale(1.1);
+
+}
+
+.text-container p{
+    text-align: left;
+    font-size: 2.963vh;
+    font-family: Poppins;
+}
+
+
+.embed-row{
+    display: flex;
+    flex-direction: row;
+    justify-content: center; 
+    height: 60vh;
+    width:auto;
+}
+.embed-container{
+    margin: 2vw;
+    width: 40%; 
+    height: 60vh;
+    background-color: #213129;
+    border-radius: 2vw;
+    border: 0.347vw solid #213129; 
+    padding: 2.469vw 2.469vh; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.embed-container embed {
+    width: 100%;
+    height: 100%;
+}
+
+.embed-container iframe {
+    width: 100%;
+    height: 100%;
+}
+
+/*! IHP ELEMENTS*/
+
+#hp-title{
+    padding-top: 6.173vh;
+    margin-bottom: 5vh;
+    font-size: 9.481vh;
+    font-family: 'Titan One',cursive;
+    font-weight: 400;
+    text-align: center;
+    letter-spacing: 0.069vw;
+    color:#5d6a44;
+}
+
+.main {
+    position: relative; 
+    height:1130.222vh;
+}
+
+#divide{
+    width:0.5vw;
+    height:1103.222vh;
+    background-color:#653A2A;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-top:6vh;
+}
+
+.info p{
+    font-size: 1.2vw;
+    font-family: Poppins;
+    font-weight: 500;
+}
+.row-container{
+    margin-top: 2vh;;
+    height:49.383vh;
+    width: 118.056vw;
+    display: flex;
+    flex-direction: row;
+}
+
+.info-block{
+    height:8vh;
+    width:11vw;
+    margin-right:0.5vw;
+    margin-top:15vh;
+    margin-left:2.5vw;
+}
+
+.info-block p{
+    font-weight: bold;
+    font-size:1.1vw;
+    color: #213129;
+}
+
+.pic-block{
+    margin-top: 5vh;
+    height:32vh;
+    width:28vw;
+    padding-top:-10vh;
+    background-color: #5d6a44;
+    border-radius: 2vw;
+    border: 0.988vh solid #5d6a44; 
+}
+
+.pic-block img{
+    height: 100%;
+    width:100%;
+    background-color: #5d6a44;
+    border-radius: 2vw;
+}
+
+.text-block{
+    margin-top: 4vh;
+    width:35vw;
+    height:27vh;
+}
+.text-block h5{
+    margin:0;
+    font-size:3.6vh;
+    color: #213129;
+}
+
+.text-block p{
+    margin:0;
+    font-size:2.3vh;
+    text-align: justify;
+    color: #213129;
+
+}
+
+.coffee-bean{
+    margin-top: 5.4vh;
+    height: 20vh;
+    width: 13vw;
+    overflow: hidden;
+    position: relative;
+    background-color: rgba(255, 255, 255, 0);
+    margin-left:2.2vw;
+}
+
+.coffee-bean img{
+    height:100%;
+    width:auto;
+    object-fit: cover;
+    display: block;
+    background-color: rgba(255, 255, 255, 0);
+
+}
+
+
+.info-block-f{
+    height:8vh;
+    width:11vw;
+    margin-right:0.5vw;
+    margin-top:15vh;
+    margin-left:1vw;
+    margin-bottom:7vh;
+
+}
+
+.info-block-f p{
+    font-weight: bold;
+    font-size: 2.1vh;
+    color: #213129;
+
+}
+
+.pic-block-f{
+    margin-top: 2vh;
+    height:30vh;
+    width:28vw;
+    padding-top:-10vh;
+    background-color: #5d6a44;
+    border-radius: 2vw;
+    
+}
+
+.pic-block-f img{
+    height: 100%;
+    width:100%;
+    background-color: #5d6a44;
+    border-radius: 2vw;
+    border: 0.988vh solid #5d6a44; 
+}
+
+.text-block-f{
+    margin-left:6vw;
+    margin-top: 5vh;
+    width:39vw;
+    height:27vh;
+}
+
+.text-block-f h5{
+    margin:0;
+    font-size:3.6vh;
+    color: #213129;
+}
+
+.text-block-f p{
+    margin:0;
+    font-size:2.3vh;
+    text-align: justify;
+    color: #213129;
+}
+
+.myFooter {
+            background-color: #899464;
+            color: white;
+            text-align: center;
+            position: relative;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 10;
+            height: 40vh;
+        }
+
+        .footer-content {
+            display: flex;
+            align-items: center;
+            height: 100%;
+        }
+        .footer-section {
+            flex: 1;
+            padding: 0.833vw;
+        }
+        
+        .sponsors-grid {
+            display: flex;
+            width: 40vw;
+            flex-wrap: wrap;
+
+            .sponsors-grid .grid-item {
+                flex: 1 1 calc(33.33% - 0.833vw);
+                margin-bottom: 0.833vw;
+            }
+
+            .sponsors-grid .grid-item:nth-child(4) {
+                flex: 1 1 100%;
+            }
+        }
+        .sponsors-grid img {
+            width: 17vw;
+            height: auto;
+            position: relative;
+        }
+        .footer-divider {
+            width: 0.052vw;
+            background-color: #213129;
+            height: 80%;
+        }
+        .contact {
+            text-align: left;
+            padding-bottom: 4vh;
+        }
+        .last-one {
+            display: block;
+            position: absolute;
+            justify-content: center;
+            align-items: center;
+            padding: 0;
+            margin: 0;
+            background-color: #3D4A2D;
+            width: 100%;
+        }
+        .hero {
+    height: 113vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 3.333vw;
+    position: relative;
+    background-image: url('https://static.igem.wiki/teams/5141/images/startbg.webp');
+}
+.hero h1 {
+    font-family: 'Titan One', cursive;
+    font-size: 8.889vh;
+    text-align: center;
+    max-width: 80%;
+    line-height: 1.2;
+    animation: fadeIn 1s ease-out;
+    color: #5A6B3F;
+    margin-bottom: 20vh;
+}
+.scroll-indicator {
+    position: absolute;
+    bottom: 1.667vw;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 6vh; /* Increased font size */
+    animation: bounce 2s infinite;
+    cursor: pointer;
+    color: #5A6B3F;
+    margin-bottom: 43vh;
+}
+    </style>
+</head>
+
+<body>
+    <script>
+        lucide.createIcons();
+    </script>
+     
+      <nav class="navbar" style="position: fixed;">
+        <a href="home"><img src="https://static.igem.wiki/teams/5141/images/caapi.webp" alt="" style="height: 10vh;width: auto;"></a>
+        <div class="navbar-content">
+            <div class="navbar-links">
+                <div class="dropdown">
+                    <a href="#" >Project</a>
+                    <div class="dropdown-content">
+                        <a href="description" >Description</a>
+                        <a href="background" >Background</a>
+                        <a href="design" >Design</a>
+                        <a href="poc" >Proof of Concept</a>
+                        <a href="implementation" >Implementation</a>
+                        <a href="biosafety" >Biosafety</a>
+                        <a href="contribution" >Contribution</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <a href="#" >Wet Lab</a>
+                    <div class="dropdown-content">
+                        <a href="engineering" >Engineering </a>
+                        <a href="materials" >Materials</a>
+                        <a href="notebook" >Notebook</a>
+                        <a href="protocols" >Protocols</a>
+                        <a href="measurement" >Measurement</a>
+                        <a href="labsafety" >Lab Safety</a>
+                        <a href="results" >Results</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <a href="#" >Dry Lab</a>
+                    <div class="dropdown-content">
+                        <a href="modelling" >Modelling</a>
+                        <a href="parts" >Parts</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <a href="software" >Software</a>
+                </div>
+                <div class="dropdown">
+                    <a href="hp" >Human Practices</a>
+                    <div class="dropdown-content">
+                        <a href="ihp" >iHP</a>
+                        <a href="outreach" >Outreach & Collaboration</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <a href="education" >Education</a>
+                </div>
+                <div class="dropdown">
+                    <a href="#" >Team</a>
+                    <div class="dropdown-content">
+                        <a href="team" >Meet the Team</a>
+                        <a href="attributions" >Attributions</a>
+                        <a href="medals" >Medals</a>
+                    </div>
+                </div>
+            </div>
+            <style>
+                
+            </style>
+        </div>
+        <div class="navbar-icons">
+            <a href="https://www.instagram.com/manipalbiomachines?igsh=MWo3MHpoNXBpcHhmdQ=="><img style="height: 3vh;width: auto;color:#3D4A2D" src="https://static.igem.wiki/teams/5141/meet-the-team/instagram-1.png" alt=""></a>
+            <a href="https://www.linkedin.com/company/manipal-biomachines/"><img style="height: 3vh;width: auto;color:#3D4A2D" src="https://static.igem.wiki/teams/5141/images/linkedin.png" alt=""></a>
+            <a href="https://manipalbiomachinesmahe.com"><img style="height: 3vh;width: auto;color:#3D4A2D" src="https://static.igem.wiki/teams/5141/meet-the-team/webdevicon.png" alt=""></a>    
+        </div>
+      </nav>
+      
+      
+        
+      <header class="hero">
+        <h1 style="margin-bottom: 30vh;">Integrated Human Practices</h1>
+        <div class="scroll-indicator">↓</div>
+      </header>
+
+
+      <div class="info" style="padding-left: 10vw; padding-right: 10vw; margin-top:5vh;">
+          <p>Our iGEM project has been shaped by a deep integration of ethical, environmental, and social considerations through our Human Practices (iHP) work. From the outset, our goal has been to address the widespread issue of Coffee Leaf Rust (CLR) in a way that minimizes environmental harm and maximizes social benefit. Engaging with stakeholders in the coffee industry, including farmers and agricultural experts, has provided critical insights into the ecological impact of chemical treatments and the challenges farmers face in adopting sustainable alternatives. This feedback has significantly influenced our project’s design, prompting us to focus on developing a biocontrol agent that is both environmentally friendly and economically viable, ensuring that the end-users—farmers—benefit from a solution that aligns with their resources and farming practices.</p>
+  
+          <p>Ethical considerations have played a central role in shaping the experiments and approaches we have employed in the lab. Stakeholder input highlighted the importance of ensuring that our biocontrol agent is effective and safe for the surrounding ecosystems and non-target species. We designed our experiments with these factors, prioritizing rigorous testing to ensure that our solution poses no undue environmental risk. Ethical feedback also emphasized the need for transparency and responsible scientific practice, which has led us to adopt more stringent documentation and safety protocols in our lab work. Throughout the competition, we have continuously refined our project based on ongoing stakeholder input, ensuring that every step of our research and development process remains aligned with the values and concerns of the communities we aim to serve.</p>
+  
+          <p>This iterative approach to integrating societal and stakeholder feedback has been fundamental to the evolution of our project. As we moved through the iGEM competition, our Human Practices team remained actively engaged with stakeholders, whose insights guided crucial pivots in our project’s direction. These exchanges allowed us to validate the real-world impact of our biocontrol agent and ensure that it meets the ethical, social, and environmental criteria necessary for successful implementation. By incorporating diverse perspectives and addressing societal needs, our project has grown into a comprehensive solution that not only tackles CLR but also has the potential for broad application in sustainable agriculture, empowering communities and protecting ecosystems globally.</p>
+  
+      </div>
+  
+      <div style="height: 9.877vh;"></div>
+  
+  
+      <div class="main">
+          <div id="divide"></div>
+  
+          <div class="row-container"> <!--!1-->
+              <div class="info-block">
+                  <p>Mr Mohan<br>(Coffee Board of India)</p>
+              </div>
+              <div class="pic-block">
+                  <img src="https://static.igem.wiki/teams/5141/ihp/dr-mohan.jpg" alt="">
+              </div>
+              <div class="coffee-bean">
+                  <img src="https://static.igem.wiki/teams/5141/ihp/asset-1-2x.png" alt="graphic">
+              </div>
+              <div class="text-block">
+                  <h5>January 2024</h5>
+                  <p style="padding-left:0.5vw; padding-right:0.5vw">
+                      Provided strategic guidance during initial project ideation.
+                      Emphasized the importance of improving coffee yields over targeting weeds, which helped refine the project’s objectives to be more impactful for the coffee industry.
+                  </p>
+              </div>
+          </div>
+  
+          <div class="row-container"> <!--!2-->
+              <div class="text-block-f" style="margin-left:1.5vw;">
+                  <h5>January - October 2024</h5>
+                  <p style="padding-left:0.2vw; margin-left:1vw;">
+                      Played a crucial role in understanding and explaining the biological mechanisms in the project, helping the team effectively navigate complex concepts in synthetic biology.
+                      Provided hands-on assistance in the wet lab, contributing to the design of experiments and troubleshooting issues, significantly improving the project's experimental rigour.
+                      We have maintained consistent communication with the team, offering assistance wherever needed throughout the project.
+                      Facilitated access to institutional resources and managed logistics, ensuring smooth project progress.
+                      .
+                  </p>
+              </div>
+              <div class="coffee-bean" style="margin-left:3vw;">
+                  <img src="https://static.igem.wiki/teams/5141/ihp/asset-3-2x.png">
+              </div>
+              <div class="pic-block-f">
+                  <img src="https://static.igem.wiki/teams/5141/ihp/ritu.png" alt="">
+              </div>
+              <div class="info-block-f" style="margin-top:8vh; margin-left:3vw;">
+                  <p>
+                      Dr. Ritu Raval (Associate Professor in Biotechnology, MIT, Manipal)  
+                  </p>
+  
+              </div>
+          </div>
+  
+          <div class="row-container"> <!--!3-->
+              <div class="info-block">
+                  <p>Dr. Praveen Kumar <br>(Assistant Professor - Selection Grade, MIT, Manipal)</p>
+              </div>
+              <div class="pic-block">
+                  <img src="https://static.igem.wiki/teams/5141/ihp/praveen.png" alt="">
+              </div>
+              <div class="coffee-bean">
+                  <img src="https://static.igem.wiki/teams/5141/ihp/asset-1-2x.png" alt="graphic">
+              </div>
+              <div class="text-block">
+                  <h5>January 2024</h5>
+                  <p style="padding-left:0.5vw; padding-right:0.5vw">
+                      Contributed to the team by specifying the different cell signalling processes for the team to ideate upon various antifungal mechanisms using bacteria.
+                      Offered insights into antibiosis, enriching the team’s understanding of microbial interactions and informing the selection of potential biocontrol agents. The team later used this as a base to narrow down the antifungal of choice. 
+  
+                  </p>
+              </div>
+          </div>
+  
+          <div class="row-container"> <!--!4-->
+              <div class="text-block-f" style="margin-left:1.5vw;">
+                  <h5>January 2024</h5>
+                  <p style="padding-left:0.2vw; margin-left:1vw;">
+                      Expanded the team’s network within the agricultural research community.
+                      Provided valuable insights on current farming practices and research trends that informed the project’s direction. 
+                      The team gained knowledge about existing farming practices, including the use of chemical fungicides to answer fungal infections. This led the team to start background research on biocontrol agents as an alternative, considering chemical fungicides often results in soil leaching.
+                  </p>
+              </div>
+              <div class="coffee-bean" style="margin-left:3vw;">
+                  <img src="https://static.igem.wiki/teams/5141/ihp/asset-3-2x.png">
+              </div>
+              <div class="pic-block-f">
+                  <img src="https://static.igem.wiki/teams/5141/ihp/samlataj.png" alt="">
+              </div>
+              <div class="info-block-f" style="margin-top:8vh; margin-left:3vw;">
+                  <p>
+                      Dr. Salmataj S A <br>(Assistant Professor - Selection Grade, MIT, Manipal)
+                  </p>
+  
+              </div>
+          </div>
+  
+  
+          <div class="row-container"> <!--!5-->
+              <div class="info-block">
+                  <p>Dr. Somanna Kolimada (Executive at Coffee Planters Association)</p>
+              </div>
+              <div class="pic-block">
+                  <img src="https://static.igem.wiki/teams/5141/ihp/somanna.jpg" alt="">
+              </div>
+              <div class="coffee-bean">
+                  <img src="https://static.igem.wiki/teams/5141/ihp/asset-1-2x.png" alt="graphic">
+              </div>
+              <div class="text-block">
+                  <h5>January 2024</h5>
+                  <p style="padding-left:0.5vw; padding-right:0.5vw">
+                      Shared expertise on the interactions between bacteria and fungi, mainly related to the pathogen Coffee Leaf Rust, providing critical background information for developing effective biocontrol strategies.
+                      Helped outline essential wet lab experiments, including but not limited to antifungal assays, ensuring the team was well-prepared to conduct meaningful research.
+                      The team gained an idea about potential experimentation to be carried out with the biocontrol agent of choice.
+   
+  
+                  </p>
+              </div>
+          </div>
+  
+          <div class="row-container"> <!--!6-->
+              <div class="text-block-f" style="margin-left:1.5vw;">
+                  <h5>February 2024</h5>
+                  <p style="padding-left:0.2vw; margin-left:1vw;">
+                      Offered her knowledge of various computational tools and methodologies applicable in the Dry Lab, such as Schrodinger, alpha fold and Hdock, enhancing the team’s capacity for data analysis and experimental design.
+                      She shared her experience as a former iGEM participant, providing advice on project management and presentation skills that were invaluable for the team's overall development.
+  
+                  </p>
+              </div>
+              <div class="coffee-bean" style="margin-left:3vw;">
+                  <img src="https://static.igem.wiki/teams/5141/ihp/asset-3-2x.png">
+              </div>
+              <div class="pic-block-f">
+                  <img src="https://static.igem.wiki/teams/5141/ihp/anusha.jpg" alt="">
+              </div>
+              <div class="info-block-f" style="margin-top:8vh; margin-left:3vw;">
+                  <p>
+                      Ms. Anusha <br>(Research Associate, Dr. Reddy's Laboratory)
+                  </p>
+  
+              </div>
+          </div>
+  
+          <div class="row-container"> <!--!7-->
+              <div class="info-block">
+                  <p> Dr. Nagaraj (Agronomist) <br>&<br> Dr. Manjunath (Entomologist).</p>
+              </div>
+              <div class="pic-block">
+                  <img src="https://static.igem.wiki/teams/5141/ihp/coffee-station.jpg" alt="">
+              </div>
+              <div class="coffee-bean">
+                  <img src="https://static.igem.wiki/teams/5141/ihp/asset-1-2x.png" alt="graphic">
+              </div>
+              <div class="text-block">
+                  <h5>Visit to Coffee Research Substation, Chettalli, March 2024</h5>
+                  <p style="padding-left:0.5vw; padding-right:0.5vw">
+                      Learned about the use of Bordeaux mixture and systemic fungicides, which informed the project’s approach to disease management and helped identify gaps for biotechnological interventions.
+                      This validated the team’s idea to carry forward with a biocontrol agent in the form of iturin A as an alternative to existing Bordeaux mixtures and system chemical fungicides.
+  
+                  
+                  </p>
+              </div>
+          </div>
+  
+          <div class="row-container"> <!--!8-->
+              <div class="text-block-f" style="margin-left:1.5vw; margin-top:0; height:35vh">
+                  <h5>March 2024</h5>
+                  <p style="padding-left:0.2vw; margin-left:1vw; padding-bottom:3vh;">
+                      She emphasized the difficulty of early detection for Hemileia vastatrix (HV) due to its close genetic similarity to other fungi, which results in low numbers of detectable proteins, making separation from other fungi challenging.
+                      She discussed the potential for HV to develop resistance to iturin, concluding that single gene mutations are unlikely to result in resistance due to iturin’s complex mechanism, granting the product long-term effectiveness.
+                      Athina highlighted the co-evolutionary relationship between iturin and rust fungi, clarifying that the presence of HV on plants doesn't necessarily indicate disease and orange spores on the back of the leaf are the best indicator for initiating fungicide application.
+                     She pointed out that environmental factors, particularly disease pressure, strongly influence the severity of HV infection.
+                     Her insights about iturin’s complex mechanism and gene mutations gave the team the idea to choose B. subtilis and replace the bacteria’s native promoter with a stronger dual promoter.
+                      
+                  </p>
+              </div>
+              <div class="coffee-bean" style="margin-left:3vw;">
+                  <img src="https://static.igem.wiki/teams/5141/ihp/asset-3-2x.png">
+              </div>
+              <div class="pic-block-f">
+                  <img src="https://static.igem.wiki/teams/5141/ihp/athina.jpg" alt="">
+              </div>
+              <div class="info-block-f" style="margin-top:8vh; margin-left:3vw;">
+                  <p>
+                     Dr. Athina Koutouleas <br>(pHD., University of Coppenhagen)
+                  </p>
+  
+              </div>
+          </div>
+  
+          <div style="height:12.346vh;"></div>
+  
+          <div class="row-container"> <!--!9-->
+              <div class="info-block">
+                  <p>Maurice D’Moss <br>(Former iGEM Participant)</p>
+              </div>
+              <div class="pic-block">
+                  <img src="https://static.igem.wiki/teams/5141/ihp/maurice.png" alt="">
+              </div>
+              <div class="coffee-bean">
+                  <img src="https://static.igem.wiki/teams/5141/ihp/asset-1-2x.png" alt="graphic">
+              </div>
+              <div class="text-block">
+                  <h5>April 2024</h5>
+                  <p style="padding-left:0.5vw; padding-right:0.5vw">
+                      Highlighted the issue of coffee bean adulteration when selling the harvest to roasters, which results in the beans being sold at a lower cost.This meeting was pivotal for our project as it directed us towards the machine learning realm to help farmers predict the yield of coffee.
+  
+                  </p>
+              </div>
+          </div>
+  
+          <div class="row-container"> <!--!10-->
+              <div class="text-block-f" style="margin-left:1.5vw;">
+                  <h5>May 2024</h5>
+                  <p style="padding-left:0.2vw; margin-left:0.2vw; margin-top:0.5vh; padding-top:0.1vh;">
+                      Helped them check the open reading frames (ORF) with dual promoters to ensure that the itu synthetase genes are correctly transcribed by investigating RNA polymerase structure in Bacillus subtilis, focusing on potential transcription hindrance due to transcription factors.
+                      Helped simulate the docking of sigma factors from the holoenzyme state and learned about the potential role of stem-loops in halting RNA polymerase progression in some cases.
+                  </p>
+              </div>
+              <div class="coffee-bean" style="margin-left:3vw;">
+                  <img src="https://static.igem.wiki/teams/5141/ihp/asset-3-2x.png">
+              </div>
+              <div class="pic-block-f">
+                  <img src="https://static.igem.wiki/teams/5141/ihp/balaji.png" alt="">
+              </div>
+              <div class="info-block-f" style="margin-top:8vh; margin-left:3vw;">
+                  <p>
+                      Dr S Balaji <br>(Head of Department, Biotechnology, MIT, Manipal)
+                  </p>
+  
+              </div>
+          </div>
+  
+  
+          <div class="row-container"> <!--!11-->
+              <div class="info-block">
+                  <p>Dr. Shaik Mohammad Abdul Fayaz (Assistant Professor - Selection Grade Department of Biotechnology, MIT, Manipal)</p>
+              </div>
+              <div class="pic-block">
+                  <img src="https://static.igem.wiki/teams/5141/ihp/dr-fayaz.png" alt="">
+              </div>
+              <div class="coffee-bean">
+                  <img src="https://static.igem.wiki/teams/5141/ihp/asset-1-2x.png" alt="graphic">
+              </div>
+              <div class="text-block">
+                  <h5>May - October 2024</h5>
+                  <p style="padding-left:0.5vw; padding-right:0.5vw">
+                      Dr. Fayaz helped the team find conceptual clarity behind the working of our promoter and helped us realise we may not be able to make our dual promoter work with the repressible promoter being closest to the gene. We were also suggested we add a spacer between the two promoters if there was any hinderance caused by the adjacent sequence of the promoter region it being a transcription factor binding site. We encountered errors in our docking to large lengths of our fragment which was realised during the conversation with him and hence only the core region was docked. He has also helped us in generation of 3D structures required for docking and recommended various docking webtools to try and interpret the results of them all. He is presently guiding us to perform molecular docking simulation for the sigma factors and our promoter fragments.
+  
+                  </p>
+              </div>
+          </div>
+  
+          <div style="height: 24.691vh;"></div>
+  
+          <div class="row-container"> <!--!12-->
+              <div class="text-block-f" style="margin-left:1.5vw;">
+                  <h5>June - September 2024</h5>
+                  <p style="padding-left:0.2vw; margin-left:1vw;">
+                      Dr. Sabari highlighted the strong constitutive pVEG promoter, which is frequently used in his lab for GFP expression, where green fluorescence can be seen on the plate.
+                      Bacillus subtilis is cold-sensitive, thriving between 20-25°C, with an optimal growth temperature of 37°C, and grows well on LB agar, similar to E. coli.
+                      He recommended homology flanks between 500-1kb for transformation, as shorter ones (~350bp) yield low success rates, and offered protocols for transformations and media preparation.
+                      Dr. Sabari emphasized proper storage in 50% glycerol at -80°C, as Bacillus subtilis is cold-sensitive, and advised managing cell density to prevent sporulation after extended periods.
+                      Also assisted in designing the protocol for our 6-hour bacterial growth curve experiment by guiding us in selecting the appropriate dilution factors and providing support in troubleshooting issues encountered during our previous growth curve attempts.
+  
+  
+                  </p>
+              </div>
+              <div class="coffee-bean" style="margin-left:3vw;">
+                  <img src="https://static.igem.wiki/teams/5141/ihp/asset-3-2x.png">
+              </div>
+              <div class="pic-block-f">
+                  <img src="https://static.igem.wiki/teams/5141/ihp/dr-sabari.jpg" alt="">
+              </div>
+              <div class="info-block-f" style="margin-top:8vh; margin-left:3vw;">
+                  <p>
+                      Dr. Sabari Sankar <br>(Assistant Professor Grade I Biology, IISER TVM)
+                  </p>
+  
+              </div>
+          </div>
+  
+          <div style="height: 24.691vh;"></div>
+  
+          <div class="row-container"> <!--!13-->
+              <div class="info-block">
+                  <p>Meeting with Karnataka Planters Association</p>
+              </div>
+              <div class="pic-block">
+                  <img src="https://static.igem.wiki/teams/5141/ihp/karnataka-coffee-planters.jpg" alt="">
+              </div>
+              <div class="coffee-bean">
+                  <img src="https://static.igem.wiki/teams/5141/ihp/asset-1-2x.png" alt="graphic">
+              </div>
+              <div class="text-block">
+                  <h5>July 2024</h5>
+                  <p style="padding-left:0.5vw; padding-right:0.5vw">
+                      Discussed the factors influencing farmer acceptance of biocontrol agents, emphasizing the importance of user-friendly instructions and addressing farmer perceptions. Further went into the key parameters to be considered 
+                      Suggested conducting field trials to demonstrate the efficacy of the biocontrol product before engaging farmers, which informed the team’s strategy for community outreach.
+                      Clarified the team’s doubts over follow-up calls and meetings related to blossom and monsoon rainfall of coffee cultivation which was utilized in the team’s machine learning model.
+                      Helped us identify the impact of yield prediction on supply-chain of coffee. Explained how the yield is currently estimated solely based on visual estimation. 
+   
+  
+                  </p>
+              </div>
+          </div>
+  
+          <div style="height: 18.519vh;"></div>
+  
+          <div class="row-container"> <!--!14-->
+              <div class="text-block-f" style="margin-left:1.5vw;">
+                  <h5>July-August 2024</h5>
+                  <p style="padding-left:0.2vw; margin-left:1vw;">
+                      Assisted in optimizing our 24-hour bacterial growth curve protocols by providing comprehensive guidance on experimental design, including the selection of appropriate time intervals and dilution factors. Additionally, he played a key role in troubleshooting experimental challenges, ensuring accurate data collection and analysis. 
+                  </p>
+              </div>
+              <div class="coffee-bean" style="margin-left:3vw;">
+                  <img src="https://static.igem.wiki/teams/5141/ihp/asset-3-2x.png">
+              </div>
+              <div class="pic-block-f">
+                  <img src="https://static.igem.wiki/teams/5141/ihp/rajesh-sir.jpg" alt="">
+              </div>
+              <div class="info-block-f" style="margin-top:8vh; margin-left:3vw;">
+                  <p>
+                      Mr. Rajesh KM <br>(PhD Scholar, MIT, Manipal)
+                  </p>
+  
+              </div>
+          </div>
+  
+  
+          <div class="row-container"> <!--!15-->
+              <div class="info-block">
+                  <p> Mrs. Atheena PV<br>(PhD Scholar, PMRF fellow, MIT, Manipal)</p>
+              </div>
+              <div class="pic-block">
+                  <img src="https://static.igem.wiki/teams/5141/ihp/atheena.jpg" alt="">
+              </div>
+              <div class="coffee-bean">
+                  <img src="https://static.igem.wiki/teams/5141/ihp/asset-1-2x.png" alt="graphic">
+              </div>
+              <div class="text-block">
+                  <h5>July-September 2024</h5>
+                  <p style="padding-left:0.5vw; padding-right:0.5vw">
+                      Played a crucial role in helping us understand the laboratory environment and safety protocols. 
+                      She also provided significant support in troubleshooting various experiments and offered valuable insights and guidance throughout the process.
+  
+   
+  
+                  </p>
+              </div>
+          </div>
+  
+          <div class="row-container"> <!--!16-->
+              <div class="text-block-f" style="margin-left:1.5vw;">
+                  <h5>July 2024</h5>
+                  <p style="padding-left:0.2vw; margin-left:1vw;">
+                      Advised testing two constructs, PbacA and P43, focusing on GFP for quantifying promoter strengths. He explained the influence of the strength of the Ribosome Binding Site (RBS) on downstream gene expression. This was incorporated in the team’s dry lab efforts toward studying the dual promoter’s efficacy using the two suggested constructs.
+  
+                      Discussed the Polarity effect, noting that dual promoter systems may not always produce cumulative effects but could show synergistic expression in certain constructs. This helped the team formulate a coherent DBTL cycle as the team’s dual promoter construct caused a synergistic effort and also made the team look into whether the construct was multiplicative or additive in nature.
+  
+                      Highlighted the importance of a wettable product formulation and suggested using CPEc as a cheaper alternative to Gibson Assembly.
+                  </p>
+              </div>
+              <div class="coffee-bean" style="margin-left:3vw;">
+                  <img src="https://static.igem.wiki/teams/5141/ihp/asset-3-2x.png">
+              </div>
+              <div class="pic-block-f">
+                  <img src="https://static.igem.wiki/teams/5141/ihp/aditya.jpg" alt="">
+              </div>
+              <div class="info-block-f" style="margin-top:8vh; margin-left:3vw;">
+                  <p>
+                      Dr. Aditya Sarnaik <br>(Postdoctoral research scientist, Arizona State University)
+                  </p>
+  
+              </div>
+          </div>
+  
+          <div style="height: 18.519vh;"></div>
+  
+  
+          <div class="row-container"> <!--!17-->
+              <div class="info-block">
+                  <p>Meeting with Ms. Sathya D <br>(Harley Plantations)</p>
+              </div>
+              <div class="pic-block">
+                  <img src="https://static.igem.wiki/teams/5141/ihp/satya.png" alt="">
+              </div>
+              <div class="coffee-bean">
+                  <img src="https://static.igem.wiki/teams/5141/ihp/asset-1-2x.png" alt="graphic">
+              </div>
+              <div class="text-block">
+                  <h5>September 2024</h5>
+                  <p style="padding-left:0.5vw; padding-right:0.5vw">
+                      Provided critical insights into existing pest control methods and the role of Bordeaux mixture, highlighting the need for the new product to offer clear advantages over established practices.
+                      Emphasized the importance of ensuring that the biocontrol agent does not leave harmful residues, guiding product development toward safer formulations.
+                      Suggested and stressed the significance of field trials, which informed the project’s implementation and testing strategies.
+                  </p>
+              </div>
+          </div>
+  
+          <div class="row-container"> <!--!18-->
+              <div class="text-block-f" style="margin-left:1.5vw;">
+                  <h5>September 2024</h5>
+                  <p style="padding-left:0.2vw; margin-left:1vw;">
+                      Emphasized the need to open options for broader disease management by targeting additional fungal diseases such as Nursery Rot, Black Rot, Berry Stem Rot, and Fruit Rot.
+                      Explained how fluctuating temperatures and high moisture during the Oct-Nov season promote the growth of HV spores, leading to plant defoliation and reduced yields, stressing the importance of considering these conditions in antifungal testing.
+                      Recommended to test the antifungal compound against 2-3 more pathogens and establish antagonistic relationships with fungal spores.
+                      Advised isolating and identifying rust species from different coffee plantations, particularly distinguishing between Arabica and Robusta varieties, to assess the compound’s effectiveness.
+                      Provided critical parameters for the machine learning model, such as post-monsoon data, berries per node, and losses after the monsoon season.
+                      The team planned its future goals upon Dr. Jeena’s advise to test iturin A as a biocontrol agent against other fungal pathogens affecting coffee.
+  
+  
+                  </p>
+              </div>
+              <div class="coffee-bean" style="margin-left:3vw;">
+                  <img src="https://static.igem.wiki/teams/5141/ihp/asset-3-2x.png">
+              </div>
+              <div class="pic-block-f">
+                  <img src="https://static.igem.wiki/teams/5141/ihp/jeena.jpg" alt="">
+              </div>
+              <div class="info-block-f" style="margin-top:8vh; margin-left:3vw;">
+                  <p>
+                      Dr. Jeena Devasia <br>(Divisional Head - Plant Breeding & Genetics, Central Coffee Research Institute, Coffee Board of India)
+                  </p>
+  
+              </div>
+          </div>
+  
+          <div style="height: 24.691vh;"></div>
+  
+  
+          <div class="row-container"> <!--!19-->
+              <div class="info-block">
+                  <p>Dr. Bharath Raja Guru<br> (Professor, Dept. of Biotechnology, MIT, Manipal)</p>
+              </div>
+              <div class="pic-block">
+                  <img src="https://static.igem.wiki/teams/5141/ihp/bharat-sir.jpg" alt="">
+              </div>
+              <div class="coffee-bean">
+                  <img src="https://static.igem.wiki/teams/5141/ihp/asset-1-2x.png" alt="graphic">
+              </div>
+              <div class="text-block">
+                  <h5>September 2024</h5>
+                  <p style="padding-left:0.5vw; padding-right:0.5vw">
+                      He assisted us by providing access to his HPLC machine and facilitating our connection with Nayana. Additionally, he offered us the contact information of a PhD scholar from whom we can obtain MTT.
+  
+   
+  
+                  </p>
+              </div>
+          </div>
+  
+          <div class="row-container"> <!--!20-->
+              <div class="text-block-f" style="margin-left:1.5vw;">
+                  <h5>September 2024</h5>
+                  <p style="padding-left:0.2vw; margin-left:1vw;">
+                      Assisted us in understanding and optimizing our HPLC protocols for both the standard and extracted Iturin. With her guidance, we gained a deeper understanding of the peak analysis necessary for constructing the standard curve. Additionally, she provided valuable insights into interpreting our data and results.
+                  </p>
+              </div>
+              <div class="coffee-bean" style="margin-left:3vw;">
+                  <img src="https://static.igem.wiki/teams/5141/ihp/asset-3-2x.png">
+              </div>
+              <div class="pic-block-f">
+                  <img src="https://static.igem.wiki/teams/5141/ihp/nayana.jpg" alt="">
+              </div>
+              <div class="info-block-f" style="margin-top:8vh; margin-left:3vw;">
+                  <p>
+                      Ms. Nayana Elizabeth Subash<br> (Research Scholar)
+                  </p>
+  
+              </div>
+          </div>
+  </div>
+  
+  <div class="info" style="padding-left: 10vw; padding-right: 10vw; margin-top:15vh;">
+      <p>Our iGEM project has been profoundly shaped by integrating ethical, environmental, and social considerations, driven by continuous engagement with stakeholders through our Human Practices (iHP) work. By collaborating closely with farmers, agricultural experts, and industry stakeholders, we’ve ensured that our solution to Coffee Leaf Rust (CLR) addresses real-world challenges while promoting environmental sustainability and economic viability. The feedback has not only shaped the design of our biocontrol agent but also reinforced the importance of safety, transparency, and responsible scientific practice in every aspect of our research.</p>
+  
+      <p>This iterative process of incorporating stakeholder input has allowed us to develop a scientifically rigorous and socially responsible project. Our commitment to addressing the concerns of the communities we aim to serve has strengthened our approach, making our biocontrol agent a solution that can empower farmers, protect ecosystems, and contribute to the future of sustainable agriculture. Through these efforts, we have created a project beyond CLR management, setting a precedent for ethical innovation in biotechnology.</p>
+  
+  </div>
+  
+  <div style="height: 18.519vh;"></div>
+  <footer class="myFooter">
+    <div class="footer-content">
+        <div class="footer-section sponsors">
+            <h2 style="color: #213129;font-size: 6vh;margin: 0;padding-bottom: 1vh;font-family: 'Titan One', cursive;">Sponsors</h2>
+            <div class="sponsors-grid" style="padding-left: 5vw;">
+                <img class="grid-item" style="height:11vh; width: auto; padding-left: 1vw;" src="https://static.igem.wiki/teams/5141/images/topleft.webp" alt="Sponsor 1">
+                <img class="grid-item" style="height:10vh; width: auto;padding-right: 3vw;padding-top: 2vh;" src="https://static.igem.wiki/teams/5141/images/manipal.webp" alt="Sponsor 2">
+                <img class="grid-item" style="height:7vh; width: auto;padding-left: 3vw;padding-top: 2vh;" src="https://static.igem.wiki/teams/5141/images/right-bottom.webp" alt="Sponsor 3">
+                <img class="grid-item" style="height:4vh; width: auto;padding-top: 4vh;padding-right: 0vw;padding-left: 2vw;" src="https://static.igem.wiki/teams/5141/images/left-bottom.webp" alt="Sponsor 4">
+                <img class="grid-item" style="height:6vh; width: auto;padding-top: 2.5vh;padding-right: 1vw;padding-left: 1vw;" src="https://static.igem.wiki/teams/5141/images/images-removebg-preview.webp" alt="Sponsor 4">
+            </div>
+        </div>
+        <div class="footer-divider"></div>
+        <div class="footer-section contact" style="color: #213129;margin-left: 5vw;">
+            <h2 style="font-size: 6vh;margin-bottom: 0;font-family: 'Titan One', cursive;">Contact Us</h2>
+            <div style="display: flex; justify-content: space-between; align-items: center;margin-left: 1vw;">
+                <div style="width: 20vw;">
+                    <p style="font-size: 1.8vh;margin-top: 0;"><strong>Email:</strong> manipalbiomachines.igem@gmail.com</p>
+                    <p style="font-size: 1.8vh;"><strong>Address:</strong> <br>Project laboratory, Academic Block-2, Manipal Institute of Technology, MAHE, Eshwar Nagar, Manipal, Udupi, Karnataka, India - 576104 </p>
+                </div>
+            </div>
+        </div>
+        <img style="width: 15vw; height: auto;margin-right: 7vw;" src="https://static.igem.wiki/teams/5141/images/igem-mit-mahe-logo.webp" alt="iGEM MIT">
+  
+    </div>
+    <div class="last-one">
+        &copy; 2024- Content on this site is licensed under a Creative Commons Attribution 4.0 International license.
+    </div>
+  </footer>
+</body>
+
+</html>
