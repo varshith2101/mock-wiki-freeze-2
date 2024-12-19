@@ -9,42 +9,5 @@
         <div class="scroll-indicator">↓</div>
     </header>
 
-    <main class="container main-content">
-        <aside class="table-of-contents" style="width: 15vw;">
-            <h2>Table of Contents</h2>
-            <ul>
-                <li><a href="#section-1"  style="margin-top: 0vh;">Overview</a></li>
-                <li><a href="#section-2">References</a></li>
-            </ul>
-        </aside>
-
-        <div class="content-panel">
-            <div class="research-content">
-                <section id="section-1">
-                    <h2>Overview</h2>
-                    <p>Since we are dealing with genetically modified bacteria, safety and biocontainment are critical. For the biocontainment of our genetically modified bacterium, <i>Bacillus Subtilis ATCC 13952</i>, we have developed an inducible kill switch, making sure that these modified bacteria do not go out into the environment. We plan to utilize a kill switch that involves an inducible gene expression system using p-isopropyl benzoate (Cumate) as an inducer to cause toxicity our chassis in its absence [2]. </p>
-                    <p>GalE is the gene that produces the enzyme UDP-glucose 4-epimerase essential for the degradation of galactose which is present in the plant cell wall. Its absence leads to toxicity due to the accumulation of harmful metabolic intermediates when galactose is present [1]. </p>
-                    <p><i>B. subtilis</i> strains lacking <i>galE</i> cannot effectively process galactose, resulting in elevated levels of UDP-galactose, which is fatal to the cells [1].  </p>
-                    <p>Reactions the enzyme UDP-glucose 4-epimerase is involved in:<br>1. UDP-α-D-glucose ↔ UDP-α-D-galactose<br> 2. UDP-N-acetyl-α-D-glucosamine ↔ UDP-N-acetyl-α-D-galactosamine </p>
-                    <center><figure>
-                        <img  style="width: 35vw;height: auto; padding: 5vh;" src="https://static.igem.wiki/teams/5141/biosafety/kill-switch-1.webp" alt="">
-                        <figcaption style="font-size: 1.5vh"><i>Fig. CymR stays bound to the operator repressing the promoter (-41:+8). Cumate lifts the bound repressor in the presence of which galE is expressed </i> </figcaption>
-                    </figure></center>
-                    <p>We intend to replace this natural promoter with the synthetic cumate induced promoter constructed by combining the strong constitutive <i>Bacillus</i> promoter <i>Pveg</i> with regulatory elements of the<i>Pseudomonas putida, CymR repressor</i>, and its operator sequence CuO [2]. </p>
-                    <p>For our implementation, cumate will be added into our formulation of wettable powder which will be taken up by our chassis passively. The formulation (chassis + Cumate) will be sprayed onto the coffee leaves in the plantation to distribute the chassis for its antifungal action against the HV. Once the Cumate has degraded or washed away the bacteria will no longer be able to survive in that environment. Cumate is a biodegradable inexpensive lab chemical. It is degraded by several microorganisms especially alphaproteobacterial like <i>Rhodococcus,Pseudomonas, and Sphingomonas</i> and is not toxic to the environment [3][4][5].</p>
-                    <!-- <img  style="width:40vw;height: auto;padding-left: 20vh;padding-right: 15vh;" src="https://static.igem.wiki/teams/5141/biosafety/kill-switch-1.webp" > -->
-                    </section>
-                <section id="section-2">
-                    <h2>References</h2>
-                    
-<p>1. Krispin, O., & Allmansberger, R. (1998). The Bacillus subtilis galE Gene Is Essential in the Presence of Glucose and Galactose. Journal of Bacteriology, 180(8), 2265–2270. https://www.ncbi.nlm.nih.gov/pmc/articles/PMC107161/<br></p>
-<p>2. Seung Oh Seo, & Schmidt-Dannert, C. (2018). Development of a synthetic cumate-inducible gene expression system for Bacillus. Applied Microbiology and Biotechnology, 103(1), 303–313. https://doi.org/10.1007/s00253-018-9485-4 <br></p>
-<p>3. Klotz, A., Kaczmarczyk, A., & Jenal, U. (2023). A Synthetic Cumate-Inducible Promoter for Graded and Homogenous Gene Expression in Pseudomonas aeruginosa. Applied and Environmental Microbiology, 89(6). https://doi.org/10.1128/aem.00211-23 <br></p>
-<p>4. Bae, H. W., Kim, D., Choi, K. Y., Kwon, N. R., Chae, J. C., Zylstra, G. J., Koh, S.-C., Lee, C.-H., & Kim, E. (2007). Functional identification ofp-cumate operons in the terpene-degradingRhodococcussp. strain T104. FEMS Microbiology Letters, 266(1), 54–59. https://doi.org/10.1111/j.1574-6968.2006.00497.x <br></p>
-<p>5. Kaczmarczyk, A., Vorholt, J. A., & Francez‐Charlot, A. (2013). Cumate-Inducible Gene Expression System for Sphingomonads and Other Alphaproteobacteria. Applied and Environmental Microbiology, 79(21), 6795–6802. https://doi.org/10.1128/aem.02296-13 <br></p>
-                </section>
-            </div>
-        </div>
-                    
-    </main>
+   
   {% endblock %}
